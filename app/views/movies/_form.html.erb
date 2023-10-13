@@ -11,17 +11,21 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+
+  <div class="form-floating mt-4">
+    <%= form.text_field :name, class: "form-control"%>
+    <label for="floatingTextarea">Name</label>
   </div>
 
-  <div>
-    <%= form.label :client_id, style: "display: block" %>
-    <%= form.select :client_id, options_for_select(@clients) %>
-  </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="form-floating mt-2">
+  <%= form.select :client_id, @clients, { include_blank: "Selecciona un cliente" }, class: "form-select", id: "floatingSelect", "aria-label" => "Floating label select example" %>
+  <label for="floatingSelect">Client</label>
+</div>
+
+
+
+  <div class="mt-2">
+    <%= form.submit "Guardar", class: "btn btn-sm btn-secondary btn-outline-light" %>
   </div>
 <% end %>
