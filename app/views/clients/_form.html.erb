@@ -11,17 +11,28 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="form-floating mt-4">
+    <%= form.text_field :name, class: "form-control"%>
+    <label for="floatingTextarea">Name</label>
+  </div>
+
+  <div class="form-floating mt-2">
+    <%= form.text_field :age, class: "form-control"%>
+    <label for="floatingTextarea">Age</label>
   </div>
 
   <div>
-    <%= form.label :age, style: "display: block" %>
-    <%= form.text_field :age %>
+    <%#= form.label :name, style: "display: block" %>
+    <%#= form.text_field :name %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%#= form.label :age, style: "display: block" %>
+    <%#= form.text_field :age %>
+  </div>
+
+
+  <div class="mt-2">
+    <%= form.submit "Guardar", class: "btn btn-sm btn-secondary btn-outline-light" %>
   </div>
 <% end %>

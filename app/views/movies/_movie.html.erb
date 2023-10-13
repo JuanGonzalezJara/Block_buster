@@ -1,12 +1,18 @@
-<div id="<%= dom_id movie %>">
-  <p>
-    <strong>Name:</strong>
-    <%= movie.name %>
-  </p>
-
-  <p>
-    <strong>Client:</strong>
-    <%= movie.client_id %>
-  </p>
-
-</div>
+  <div class="col-4 py-2">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"><%= movie.name %></h5>
+        <%# Check nombre ruta actual %>
+        <script>
+  // var currentPath = "<%= request.path %>";
+  // var movieID = "<%= movie.id %>";
+  // console.log("La ruta actual es: " + currentPath);
+  // console.log("ID: " + movieID)
+        </script>
+        <%# Permite ocultar el boton del partial si ya se esta en el path de view %>
+        <% if request.path != "/movies/#{movie.id}" %>
+          <%= link_to "Show this movie", movie, class: "btn btn-sm btn-secondary btn-outline-light" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
